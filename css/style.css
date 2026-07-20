@@ -1478,3 +1478,18 @@ textarea {
     flex-direction: column;
   }
 }
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+.reveal,
+.service-grid,
+.service-card,
+.section-heading,
+.reason-grid,
+.process-list,
+.cta-box {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
