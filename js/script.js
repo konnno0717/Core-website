@@ -1,62 +1,60 @@
-// =========================
-// Core Website Script
-// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  // 年号を自動表示
+  const yearElement = document.getElementById("year");
 
-// ヘッダーの背景変更
-const header = document.querySelector(".header");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
 
-window.addEventListener("scroll", () => {
+  // スクロール表示アニメーション
+  const revealElements = document.querySelectorAll(".reveal");
 
-    if (window.scrollY > 80) {
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -40px 0px"
+      }
+    );
 
-        header.style.background = "rgba(255,255,255,.98)";
-        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.08)";
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+  } else {
+    revealElements.forEach((element) => {
+      element.classList.add("is-visible");
+    });
+  }
 
-    } else {
+  // スマホメニュー
+  const menuButton = document.querySelector(".menu-toggle");
+  const globalNav = document.querySelector(".global-nav");
 
-        header.style.background = "rgba(255,255,255,.92)";
-        header.style.boxShadow = "none";
+  if (menuButton && globalNav) {
+    menuButton.addEventListener("click", () => {
+      const isOpen = globalNav.classList.toggle("is-open");
 
-    }
+      menuButton.classList.toggle("is-open", isOpen);
+      menuButton.setAttribute("aria-expanded", String(isOpen));
 
-});
-
-// =========================
-// スクロールアニメーション
-// =========================
-
-const sections = document.querySelectorAll(".section");
-
-const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
-        }
-
+      document.body.style.overflow = isOpen ? "hidden" : "";
     });
 
-},{
-    threshold:0.2
-});
-
-sections.forEach(section=>{
-
-    observer.observe(section);
-
-});
-
-// =======================
-// カードを順番に表示
-// =======================
-
-const cards=document.querySelectorAll(".card");
-
-cards.forEach((card,index)=>{
-
-    card.style.transitionDelay=`${index*0.15}s`;
-
+    globalNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        globalNav.classList.remove("is-open");
+        menuButton.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      });
+    });
+  }
 });

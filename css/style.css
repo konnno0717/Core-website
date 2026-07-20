@@ -650,3 +650,831 @@ Scroll Animation
     background:#2563EB;
 
 }
+
+/* ========================================
+   Core 下層ページ共通デザイン
+======================================== */
+
+:root {
+  --core-black: #101010;
+  --core-dark: #1a1a1a;
+  --core-gray: #6c6c6c;
+  --core-light: #f6f6f4;
+  --core-white: #ffffff;
+  --core-gold: #b49a68;
+  --core-border: #e2e2de;
+  --core-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--core-black);
+  background: var(--core-white);
+  font-family:
+    "Noto Sans JP",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    Meiryo,
+    sans-serif;
+  line-height: 1.8;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* ヘッダー */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(18px);
+}
+
+.header-inner {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo,
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  color: var(--core-white);
+  background: var(--core-black);
+  border-radius: 50%;
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+
+.logo-text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  letter-spacing: 0.08em;
+}
+
+.global-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.global-nav a {
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.global-nav a:not(.nav-contact)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 1px;
+  background: var(--core-black);
+  transition: width 0.3s ease;
+}
+
+.global-nav a:hover::after,
+.global-nav a.is-current::after {
+  width: 100%;
+}
+
+.nav-contact {
+  padding: 11px 23px;
+  color: var(--core-white);
+  background: var(--core-black);
+  border: 1px solid var(--core-black);
+  transition: 0.3s ease;
+}
+
+.nav-contact:hover {
+  color: var(--core-black);
+  background: transparent;
+}
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 7px 0;
+  background: var(--core-black);
+  transition: 0.3s ease;
+}
+
+/* 下層ページ ヒーロー */
+
+.sub-hero {
+  position: relative;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--core-white);
+  background:
+    linear-gradient(120deg, #111111 0%, #292929 65%, #4a443a 100%);
+}
+
+.sub-hero::before {
+  content: "";
+  position: absolute;
+  top: -130px;
+  right: -100px;
+  width: 460px;
+  height: 460px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+}
+
+.sub-hero::after {
+  content: "";
+  position: absolute;
+  right: 160px;
+  bottom: -180px;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.sub-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.28),
+      rgba(0, 0, 0, 0.03)
+    );
+}
+
+.sub-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 0;
+}
+
+.sub-hero-content h1 {
+  margin: 4px 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(54px, 8vw, 104px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.sub-hero-content > p:last-child {
+  margin: 20px 0 0;
+  font-size: 15px;
+  letter-spacing: 0.15em;
+}
+
+/* セクション共通 */
+
+.section {
+  padding: 110px 0;
+}
+
+.section-alt {
+  background: var(--core-light);
+}
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 58px;
+}
+
+.section-label {
+  margin: 0 0 12px;
+  color: var(--core-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.section-heading h2,
+.cta-box h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.section-description {
+  max-width: 720px;
+  margin: 24px 0 0;
+  color: var(--core-gray);
+  font-size: 16px;
+}
+
+/* サービス */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  position: relative;
+  min-height: 370px;
+  padding: 38px 34px;
+  overflow: hidden;
+  background: var(--core-white);
+  border: 1px solid var(--core-border);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-9px);
+  border-color: rgba(180, 154, 104, 0.45);
+  box-shadow: var(--core-shadow);
+}
+
+.service-number {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: #ddddda;
+  font-family: Georgia, serif;
+  font-size: 54px;
+  line-height: 1;
+}
+
+.service-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 48px;
+  color: var(--core-white);
+  background: var(--core-black);
+  border-radius: 50%;
+  font-family: Georgia, serif;
+  font-size: 22px;
+}
+
+.service-card h3 {
+  margin: 0 0 18px;
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--core-gray);
+  font-size: 14px;
+}
+
+/* 選ばれる理由 */
+
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--core-border);
+  border-left: 1px solid var(--core-border);
+}
+
+.reason-card {
+  min-height: 270px;
+  padding: 34px 27px;
+  background: var(--core-white);
+  border-right: 1px solid var(--core-border);
+  border-bottom: 1px solid var(--core-border);
+  transition: 0.3s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--core-shadow);
+}
+
+.reason-number {
+  display: block;
+  margin-bottom: 38px;
+  color: var(--core-gold);
+  font-family: Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.reason-card h3 {
+  margin: 0 0 15px;
+  font-size: 20px;
+}
+
+.reason-card p {
+  margin: 0;
+  color: var(--core-gray);
+  font-size: 14px;
+}
+
+/* ご依頼の流れ */
+
+.process-list {
+  border-top: 1px solid var(--core-border);
+}
+
+.process-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 30px;
+  padding: 38px 10px;
+  border-bottom: 1px solid var(--core-border);
+}
+
+.process-number {
+  color: var(--core-gold);
+  font-family: Georgia, serif;
+  font-size: 38px;
+}
+
+.process-item h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.process-item p {
+  margin: 0;
+  color: var(--core-gray);
+}
+
+/* ボタン・CTA */
+
+.button {
+  min-width: 220px;
+  min-height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  color: var(--core-white);
+  background: var(--core-black);
+  border: 1px solid var(--core-black);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  color: var(--core-black);
+  background: var(--core-white);
+}
+
+.cta-box {
+  padding: 80px 70px;
+  color: var(--core-white);
+  text-align: center;
+  background:
+    linear-gradient(120deg, #131313 0%, #302d28 100%);
+}
+
+.cta-box .section-label {
+  color: #d7c296;
+}
+
+.cta-box p:not(.section-label) {
+  margin: 22px 0 35px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.button-light {
+  color: var(--core-black);
+  background: var(--core-white);
+  border-color: var(--core-white);
+}
+
+.button-light:hover {
+  color: var(--core-white);
+  background: transparent;
+}
+
+/* お問い合わせ */
+
+.contact-container {
+  max-width: 1120px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.82fr 1.4fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.contact-information {
+  display: grid;
+  gap: 20px;
+}
+
+.contact-info-card {
+  padding: 30px;
+  background: var(--core-light);
+  border-left: 3px solid var(--core-gold);
+}
+
+.contact-info-card h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.contact-info-card p:not(.section-label) {
+  margin: 0;
+  color: var(--core-gray);
+  font-size: 14px;
+}
+
+.contact-form-wrap {
+  padding: 48px;
+  background: var(--core-white);
+  border: 1px solid var(--core-border);
+  box-shadow: var(--core-shadow);
+}
+
+.contact-form {
+  display: grid;
+  gap: 27px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.required {
+  display: inline-block;
+  margin-left: 7px;
+  padding: 1px 7px;
+  color: var(--core-white);
+  background: var(--core-black);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 15px 16px;
+  color: var(--core-black);
+  background: #fafafa;
+  border: 1px solid #d7d7d3;
+  border-radius: 0;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  background: var(--core-white);
+  border-color: var(--core-black);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+.form-check label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.form-check input {
+  margin-top: 6px;
+}
+
+.form-check a {
+  border-bottom: 1px solid var(--core-black);
+}
+
+.form-submit {
+  width: 100%;
+}
+
+.form-note {
+  margin: -10px 0 0;
+  color: var(--core-gray);
+  text-align: center;
+  font-size: 12px;
+}
+
+/* プライバシーポリシー */
+
+.privacy-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.privacy-intro {
+  margin: 0 0 55px;
+  padding: 30px;
+  background: var(--core-light);
+}
+
+.privacy-section {
+  padding: 34px 0;
+  border-bottom: 1px solid var(--core-border);
+}
+
+.privacy-section h2 {
+  margin: 0 0 17px;
+  font-size: 22px;
+}
+
+.privacy-section p {
+  margin: 0;
+  color: var(--core-gray);
+}
+
+.privacy-section ul {
+  margin: 18px 0 0;
+  padding-left: 24px;
+  color: var(--core-gray);
+}
+
+.privacy-section .button {
+  margin-top: 25px;
+}
+
+.privacy-date {
+  margin-top: 50px;
+  text-align: right;
+}
+
+.privacy-date p {
+  margin: 4px 0;
+}
+
+/* フッター */
+
+.site-footer {
+  color: rgba(255, 255, 255, 0.75);
+  background: #101010;
+}
+
+.footer-inner {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.footer-logo {
+  color: var(--core-white);
+}
+
+.footer-logo .logo-mark {
+  color: var(--core-black);
+  background: var(--core-white);
+}
+
+.footer-company p {
+  margin: 13px 0 0;
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 14px 26px;
+}
+
+.footer-links a {
+  font-size: 13px;
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: var(--core-white);
+}
+
+.footer-bottom {
+  padding: 19px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+/* スクロール表示アニメーション */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* タブレット */
+
+@media (max-width: 900px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reason-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .footer-inner {
+    padding: 60px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+}
+
+/* スマートフォン */
+
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 32px, 1120px);
+  }
+
+  .header-inner {
+    min-height: 68px;
+  }
+
+  .logo-mark {
+    width: 37px;
+    height: 37px;
+    font-size: 21px;
+  }
+
+  .logo-text {
+    font-size: 23px;
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 1002;
+    display: block;
+  }
+
+  .global-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.98);
+    transition: 0.3s ease;
+  }
+
+  .global-nav.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .global-nav a {
+    font-size: 18px;
+  }
+
+  .nav-contact {
+    min-width: 190px;
+    text-align: center;
+  }
+
+  .menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .sub-hero {
+    min-height: 350px;
+  }
+
+  .sub-hero-content {
+    padding: 60px 0;
+  }
+
+  .section {
+    padding: 76px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 38px;
+  }
+
+  .service-grid,
+  .reason-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: auto;
+  }
+
+  .process-item {
+    grid-template-columns: 70px 1fr;
+    gap: 15px;
+  }
+
+  .process-number {
+    font-size: 29px;
+  }
+
+  .cta-box {
+    padding: 58px 24px;
+  }
+
+  .contact-form-wrap {
+    padding: 29px 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+}
