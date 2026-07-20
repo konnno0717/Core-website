@@ -176,3 +176,27 @@ button,input,select,textarea{font:inherit}
     height: auto;
 }
 }
+/* ロゴサイズ修正 */
+.site-header {
+  height: 80px;
+}
+
+.header-inner {
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 90px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.logo img {
+  width: 75px !important;
+  height: 70px !important;
+  max-width: 75px !important;
+  object-fit: contain;
+  display: block;
+}
