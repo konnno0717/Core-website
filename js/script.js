@@ -1,58 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 年号を自動表示
-  const yearElement = document.getElementById("year");
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
-
-  // スクロール表示アニメーション
-  const revealElements = document.querySelectorAll(".reveal");
-
+  const reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -40px 0px"
-      }
-    );
-
-    revealElements.forEach((element) => {
-      revealObserver.observe(element);
-    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
+    reveals.forEach((el) => observer.observe(el));
   } else {
-    revealElements.forEach((element) => {
-      element.classList.add("is-visible");
-    });
+    reveals.forEach((el) => el.classList.add("is-visible"));
   }
 
-  // スマホメニュー
-  const menuButton = document.querySelector(".menu-toggle");
-  const globalNav = document.querySelector(".global-nav");
-
-  if (menuButton && globalNav) {
-    menuButton.addEventListener("click", () => {
-      const isOpen = globalNav.classList.toggle("is-open");
-
-      menuButton.classList.toggle("is-open", isOpen);
-      menuButton.setAttribute("aria-expanded", String(isOpen));
-
-      document.body.style.overflow = isOpen ? "hidden" : "";
+  const button = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".global-nav");
+  if (button && nav) {
+    button.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      button.classList.toggle("is-open", open);
+      button.setAttribute("aria-expanded", String(open));
+      document.body.style.overflow = open ? "hidden" : "";
     });
-
-    globalNav.querySelectorAll("a").forEach((link) => {
+    nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        globalNav.classList.remove("is-open");
-        menuButton.classList.remove("is-open");
-        menuButton.setAttribute("aria-expanded", "false");
+        nav.classList.remove("is-open");
+        button.classList.remove("is-open");
+        button.setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
       });
     });

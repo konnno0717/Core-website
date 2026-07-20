@@ -1,137 +1,161 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Company | 株式会社Core</title>
-  <meta name="description" content="株式会社Coreについて。代表メッセージ、会社概要、ミッション、ビジョン、バリューをご紹介します。" />
-  <meta name="theme-color" content="#ffffff" />
-  <link rel="canonical" href="https://example.com/company.html" />
-  <link rel="stylesheet" href="./css/style.css" />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>株式会社Core｜企業と現場の課題を解決する</title>
+  <meta name="description" content="株式会社Coreは、営業支援、マーケティング支援、情報コンテンツ制作、人材育成、Web制作、システム開発を通じて企業の成長を支援します。">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+
   <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="./index.html" class="brand">
-        <span class="brand-mark">C</span>
-        <span class="brand-text">Core</span>
+    <div class="container header-inner">
+      <a href="./index.html" class="logo" aria-label="株式会社Core トップページ">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">Core</span>
       </a>
-      <button class="nav-toggle" aria-label="メニューを開閉" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
-      <nav class="nav-menu">
+
+      <nav class="global-nav">
         <a href="./index.html">Home</a>
         <a href="./company.html">Company</a>
+        <a href="./service.html">Service</a>
+        <a href="./contact.html" class="nav-contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container reveal">
-        <p class="eyebrow">Company</p>
-        <h1>株式会社Coreについて</h1>
-        <p>信頼・誠実・挑戦を理念に、価値あるサービスを提供する企業を目指します。</p>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content reveal">
+        <p class="section-label">CORE INC.</p>
+        <h1>本質を捉え、<br>企業の未来をつくる。</h1>
+        <p class="hero-copy">
+          株式会社Coreは、営業・マーケティング・人材育成・デジタル支援を通じて、
+          お客様の課題解決と持続的な成長を支援します。
+        </p>
+        <div class="hero-actions">
+          <a href="./service.html" class="button">事業内容を見る</a>
+          <a href="./contact.html" class="text-link">お問い合わせ</a>
+        </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
+      <div class="container split-grid">
         <div class="section-heading reveal">
-          <p class="eyebrow">Representative Message</p>
-          <h2>代表メッセージ</h2>
+          <p class="section-label">ABOUT CORE</p>
+          <h2>課題の核心に向き合い、<br>価値ある答えを導く。</h2>
         </div>
-
-        <article class="card reveal">
+        <div class="lead-copy reveal">
           <p>
-            株式会社Coreは、<br />
-            「信頼・誠実・挑戦」を理念に、お客様一人ひとりに寄り添い、<br />
-            価値あるサービスを提供することを使命としております。
+            私たちは、表面的な対応ではなく、課題の本質を見極めることを大切にしています。
+            現状を丁寧に整理し、目的に合った戦略と実行方法をご提案します。
           </p>
-          <p>
-            変化の激しい時代だからこそ、<br />
-            柔軟な発想と迅速な行動力で、<br />
-            常にお客様に最適なご提案を行います。
-          </p>
-          <p>
-            今後も社会に必要とされる企業を目指し、<br />
-            社員一同、挑戦を続けてまいります。
-          </p>
-        </article>
+          <a href="./company.html" class="text-link">会社情報を見る</a>
+        </div>
       </div>
     </section>
 
     <section class="section section-alt">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow">Company Overview</p>
-          <h2>会社概要</h2>
+          <p class="section-label">SERVICES</p>
+          <h2>事業内容</h2>
+          <p class="section-description">
+            企業活動に必要な営業、マーケティング、教育、Web、システム領域を横断して支援します。
+          </p>
         </div>
 
-        <div class="grid grid-2">
-          <article class="card reveal">
-            <h3>基本情報</h3>
-            <ul class="info-list">
-              <li><strong>会社名</strong><span>株式会社Core</span></li>
-              <li><strong>代表取締役</strong><span>小林 秀仁</span></li>
-              <li><strong>設立</strong><span>2025年</span></li>
-            </ul>
+        <div class="home-service-grid">
+          <article class="home-service-card reveal">
+            <span>01</span>
+            <h3>営業・マーケティング支援</h3>
+            <p>営業体制の構築、施策設計、販売促進、集客支援などを行います。</p>
           </article>
+          <article class="home-service-card reveal">
+            <span>02</span>
+            <h3>情報コンテンツ制作</h3>
+            <p>営業資料、教育資料、Webコンテンツなどの企画・制作を行います。</p>
+          </article>
+          <article class="home-service-card reveal">
+            <span>03</span>
+            <h3>人材育成・能力開発</h3>
+            <p>研修、教育プログラム、業務マニュアル整備などを支援します。</p>
+          </article>
+          <article class="home-service-card reveal">
+            <span>04</span>
+            <h3>Web・システム支援</h3>
+            <p>企業サイト制作、管理ツール、業務効率化システムを提供します。</p>
+          </article>
+        </div>
 
-          <article class="card reveal">
-            <h3>事業内容</h3>
-            <ul class="feature-list">
-              <li>工具・機械メンテナンス事業</li>
-              <li>製造業向け技術サポート</li>
-              <li>教育・研修事業</li>
-              <li>部品・消耗品販売</li>
-              <li>Web制作</li>
-              <li>システム開発</li>
-            </ul>
-          </article>
+        <div class="section-action reveal">
+          <a href="./service.html" class="button">詳しい事業内容を見る</a>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="grid grid-3">
-          <article class="card reveal">
-            <h3>Mission</h3>
-            <p>「企業の課題を解決し、未来を創る。」</p>
-          </article>
+        <div class="value-panel reveal">
+          <p class="section-label">OUR VALUES</p>
+          <h2>Trust. Integrity. Challenge.</h2>
+          <div class="value-grid">
+            <div><strong>信頼</strong><p>約束を守り、長期的な関係を築きます。</p></div>
+            <div><strong>誠実</strong><p>透明性のある丁寧な対応を徹底します。</p></div>
+            <div><strong>挑戦</strong><p>変化を恐れず、より良い方法を追求します。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <article class="card reveal">
-            <h3>Vision</h3>
-            <p>「日本中の企業から必要とされる存在へ。」</p>
-          </article>
-
-          <article class="card reveal">
-            <h3>Value</h3>
-            <ul class="feature-list">
-              <li>誠実</li>
-              <li>挑戦</li>
-              <li>スピード</li>
-              <li>品質</li>
-            </ul>
-          </article>
+    <section class="section">
+      <div class="container">
+        <div class="cta-box reveal">
+          <p class="section-label">CONTACT</p>
+          <h2>事業に関するご相談を承ります。</h2>
+          <p>サービスのご相談、お見積り、協業のご提案など、お気軽にお問い合わせください。</p>
+          <a href="./contact.html" class="button button-light">お問い合わせはこちら</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© <span id="year"></span> 株式会社Core</p>
+    <div class="container footer-inner">
+      <div class="footer-company">
+        <a href="./index.html" class="footer-logo">
+          <span class="logo-mark">C</span>
+          <span class="logo-text">Core</span>
+        </a>
+        <p>株式会社Core</p>
+      </div>
+
       <div class="footer-links">
-        <a href="./index.html">トップページ</a>
-        <a href="mailto:t03405828@gmail.com">お問い合わせ</a>
+        <a href="./index.html">Home</a>
+        <a href="./company.html">Company</a>
+        <a href="./service.html">Service</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Core Inc. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
   <script src="./js/script.js"></script>
+
 </body>
 </html>
