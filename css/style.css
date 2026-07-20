@@ -1,0 +1,652 @@
+/* ===================================
+   Core Corporate Website
+   Version 1.0
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+    "Yu Gothic",
+    "Hiragino Sans",
+    sans-serif;
+
+    background:#ffffff;
+
+    color:#111827;
+
+    line-height:1.8;
+}
+
+img{
+    max-width:100%;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/* =======================
+Container
+======================= */
+
+.container{
+
+    width:min(1100px,90%);
+    margin:auto;
+
+}
+
+/* =======================
+Header
+======================= */
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(12px);
+
+    z-index:999;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 0;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.logo-mark{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:#0F172A;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.logo-text{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+/* =======================
+Navigation
+======================= */
+
+nav ul{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+nav a{
+
+    color:#111827;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#2563EB;
+
+}
+
+/* =======================
+Hero
+======================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 20px 80px;
+
+    background:
+
+    linear-gradient(
+    180deg,
+    #ffffff,
+    #f6f8fb
+    );
+
+}
+
+.hero-inner{
+
+    max-width:760px;
+
+}
+
+.catch{
+
+    color:#2563EB;
+
+    letter-spacing:4px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-size:68px;
+
+    color:#0F172A;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+}
+
+.lead{
+
+    font-size:20px;
+
+    color:#4B5563;
+
+    margin-bottom:45px;
+
+}
+
+/* =======================
+Button
+======================= */
+
+.button{
+
+    display:inline-block;
+
+    background:#0F172A;
+
+    color:white;
+
+    padding:18px 42px;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+}
+
+.button:hover{
+
+    background:#2563EB;
+
+    transform:translateY(-3px);
+
+}
+
+/* =======================
+Concept
+======================= */
+
+.concept{
+
+    padding:120px 0;
+
+}
+
+.concept h2{
+
+    font-size:54px;
+
+    color:#0F172A;
+
+    margin-top:80px;
+
+}
+
+.concept p{
+
+    color:#6B7280;
+
+    font-size:20px;
+
+    margin-top:15px;
+
+}
+
+/* =======================
+Footer
+======================= */
+
+footer{
+
+    background:#0F172A;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px 0;
+
+}
+
+/* =======================
+Responsive
+======================= */
+
+@media(max-width:768px){
+
+nav{
+
+display:none;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.catch{
+
+font-size:14px;
+
+}
+
+.lead{
+
+font-size:17px;
+
+}
+
+.concept h2{
+
+font-size:34px;
+
+}
+
+}
+/* ===================================
+   Section
+=================================== */
+
+.section{
+    padding:100px 0;
+}
+
+.section h2{
+    font-size:42px;
+    color:#0F172A;
+    margin-bottom:25px;
+    letter-spacing:2px;
+}
+
+.section-text{
+    max-width:760px;
+    color:#6B7280;
+    font-size:18px;
+}
+
+/* ===================================
+   Service
+=================================== */
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.card{
+
+    background:#fff;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    transition:.3s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.04);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.10);
+
+}
+
+.card h3{
+
+    color:#0F172A;
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    color:#6B7280;
+
+}
+
+/* ===================================
+   Company
+=================================== */
+
+.company-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:40px;
+
+}
+
+.company-table th,
+.company-table td{
+
+    padding:20px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.company-table th{
+
+    width:220px;
+
+    background:#f8fafc;
+
+    text-align:left;
+
+}
+
+/* ===================================
+   Contact
+=================================== */
+
+#contact{
+
+    text-align:center;
+
+}
+
+#contact .button{
+
+    margin-top:35px;
+
+}
+
+/* ===================================
+   Hero Animation
+=================================== */
+
+.hero-inner{
+
+    animation:fadeUp 1s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* =========================
+Scroll Animation
+========================= */
+
+.section{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:1s;
+
+}
+
+.section.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* =========================
+Scroll Animation
+========================= */
+
+.section{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:1s;
+
+}
+
+.section.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ===========================
+   Premium Design Upgrade
+=========================== */
+
+/* Hero背景 */
+
+.hero{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:radial-gradient(circle,#2563EB22,transparent 70%);
+
+    top:-250px;
+    right:-150px;
+
+    border-radius:50%;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:radial-gradient(circle,#0F172A10,transparent 70%);
+
+    bottom:-200px;
+    left:-120px;
+
+    border-radius:50%;
+
+}
+
+/* Heroを前面へ */
+
+.hero-inner{
+
+    position:relative;
+    z-index:2;
+
+}
+
+/* カード */
+
+.card{
+
+    backdrop-filter:blur(12px);
+
+}
+
+/* ボタン */
+
+.button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.button::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transition:.8s;
+
+}
+
+.button:hover::before{
+
+    left:120%;
+
+}
+
+/* ロゴ */
+
+.logo-mark{
+
+    transition:.4s;
+
+}
+
+.logo:hover .logo-mark{
+
+    transform:rotate(360deg);
+
+    background:#2563EB;
+
+}
