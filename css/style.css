@@ -157,3 +157,22 @@ button,input,select,textarea{font:inherit}
   .contact-form-wrap{padding:28px 20px}
   .footer-links{flex-direction:column}
 }
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  display: block;
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+ .logo img {
+    width: 240px;
+    height: auto;
+}
+}
